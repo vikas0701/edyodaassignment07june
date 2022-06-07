@@ -1,2 +1,3 @@
-A Replica set is used to ensure that a specific set of Pods is running at all times.
+Replica Set will allocate pods in any of the worker node to make it desired=current
+but if we want that all the pods should be in different nodes then we can use the Daemon set.
 When we want all pods should be equally distributed in all nodes then we can use daemon set instead of replica set.
