@@ -1,0 +1,11 @@
+db abd radius are ClusterIP as we don't want user to access it.
+result and vote are NodePort so user can access them.
+[root@ip-172-31-30-127 k8s-specifications]#kubectl delete po vote-94849dc97-pfnx2
+  -> as old pod went away new pod got created so application is running fine and desired=current is maintain.
+[root@ip-172-31-30-127 k8s-specifications]#kubectl delete po worker-dd46d7584-gk5r2 
+  -> old pod terminating and new pod got created so application is running fine.
+[root@ip-172-31-30-127 k8s-specifications]#kubectl delete po db-b54cd94f4-bdlr4
+  -> db pod is deleted and after deleting db nod, result app is not working fine or not giving proper 
+result so simply we can just restart result app by deleting result app.
+-> deleting db app result in loss of data and result app app is not giving proper result so result app restarted.
+-> when worker was deleted all previous logs are lost.
